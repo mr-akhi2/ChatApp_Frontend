@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import ChatApp from "./Components/ChatApp";
 import { Route, Routes } from "react-router-dom";
-import Message from "./Components/message";
+import Message from "./Components/Message";
 import Profile from "./Components/Profile";
 import Login from "./Components/Login";
 import Signup from "./Components/Signup";
