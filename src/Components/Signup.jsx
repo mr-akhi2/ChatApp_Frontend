@@ -18,7 +18,7 @@ const Signup = () => {
   const Signup = async () => {
     setloader("loading...");
     try {
-      await fetch("http://localhost:5001/signup", {
+      await fetch("https://chatapp-backend-2-mtha.onrender.com/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

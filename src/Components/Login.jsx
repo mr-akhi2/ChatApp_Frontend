@@ -19,13 +19,16 @@ const Login = () => {
   const Login = async () => {
     setloader("loading......");
     try {
-      const res = await fetch("http://localhost:5001/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const res = await fetch(
+        "https://chatapp-backend-2-mtha.onrender.com/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       const resp = await res.json();
       if (resp.success) {

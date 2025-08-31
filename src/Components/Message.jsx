@@ -29,11 +29,14 @@ const Message = () => {
   const sendMessage = async () => {
     if (!msg.messages.trim()) return;
     try {
-      const resp = await fetch("http://localhost:5001/sendmessage", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ msg, senderId, recieverId }),
-      });
+      const resp = await fetch(
+        "https://chatapp-backend-2-mtha.onrender.com/sendmessage",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ msg, senderId, recieverId }),
+        }
+      );
       const res = await resp.json();
       dispatch(setMessages([...messages, res.newMessage]));
       setmsg({ messages: "" });
@@ -44,7 +47,7 @@ const Message = () => {
 
   useEffect(() => {
     if (!senderId || !recieverId) return;
-    fetch("http://localhost:5001/getMessages", {
+    fetch("https://chatapp-backend-2-mtha.onrender.com/getMessages", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ senderId, recieverId }),

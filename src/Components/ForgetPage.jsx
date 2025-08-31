@@ -10,7 +10,7 @@ const ForgetPage = () => {
     e.preventDefault();
     setloader("sending....");
     try {
-      await fetch("http://localhost:5001/sendEmail", {
+      await fetch("https://chatapp-backend-2-mtha.onrender.com/sendEmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

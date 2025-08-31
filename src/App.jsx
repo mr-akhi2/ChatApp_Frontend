@@ -18,7 +18,7 @@ const App = () => {
   const [onlineusers, setOnlineUsers] = useState([]);
   useEffect(() => {
     if (userdata) {
-      const socketio = io("http://localhost:5001", {
+      const socketio = io("https://chatapp-backend-2-mtha.onrender.com", {
         query: {
           userId: userdata?._id,
         },

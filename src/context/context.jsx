@@ -6,7 +6,7 @@ const UserProvider = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch("http://localhost:5001/Allusers")
+    fetch("https://chatapp-backend-2-mtha.onrender.com/Allusers")
       .then((resp) => resp.json())
       .then((res) => {
         // console.log(res.users);

@@ -25,10 +25,13 @@ const Profile = () => {
       const formdata = new FormData();
       formdata.append("profile", file);
 
-      const resp = await fetch(`http://localhost:5001/profile/${user?._id}`, {
-        method: "PATCH",
-        body: formdata,
-      });
+      const resp = await fetch(
+        `https://chatapp-backend-2-mtha.onrender.com/profile/${user?._id}`,
+        {
+          method: "PATCH",
+          body: formdata,
+        }
+      );
 
       const res = await resp.json();
 
@@ -46,7 +49,7 @@ const Profile = () => {
   };
 
   const Logout = async () => {
-    await fetch("http://localhost:5001/logout", {
+    await fetch("https://chatapp-backend-2-mtha.onrender.com/logout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
